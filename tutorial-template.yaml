@@ -1,0 +1,15 @@
+enabled: true
+license: Creative Commons Attribution-ShareAlike 4.0 International License
+license_url: https://creativecommons.org/licenses/by-sa/4.0/
+license_img: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
+show_git_link: true
+git_service: GitHub
+
+streams:
+ schemes:
+   theme:
+     type: ReadOnlyStream
+     prefixes:
+       '':
+       - themes://tutorial-template
+       - themes://learn2

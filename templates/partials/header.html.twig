@@ -1,0 +1,32 @@
+{% set logo_img = theme_var('custom_logo') %}
+{% set logo_txt = theme_var('custom_logo_text') %}
+{% set logo_alt = theme_var('logo_alt') %}
+{% set logo_url = theme_var('home_url') %}
+
+{% if logo_img %}
+    <div class="header-logo">
+        {# To be a link, the logo must have both a link and alternative text specified. #}
+        {% if logo_url and logo_alt %}
+            <a href={{ logo_url }}>
+                <img src="{{ url('theme://images/logo/' ~ (logo_img|first).name) }}" alt="{{ logo_alt }}" />
+            </a>
+        {# If logo does not have link and alt text, the logo will be displayed as an image with either custom or default alt text. #}
+        {% else %}
+            <img src="{{ url('theme://images/logo/' ~ (logo_img|first).name) }}" alt="{{ logo_alt ?: 'Logo' }}" />
+        {% endif %}
+    </div>
+{% elseif logo_txt %}
+    <div class="header-logo">
+        {% if logo_url %}
+            <a href={{ logo_url }}>
+                <span>{{ logo_txt }}</span>
+            </a>
+        {% else %}
+            <span>{{ logo_text }}</span>
+        {% endif %}
+    </div>
+{% endif %}
+
+<div class="header-text">
+    <span>{{ site.title }}</span>
+</div>

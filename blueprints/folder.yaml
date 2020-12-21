@@ -1,0 +1,25 @@
+title: Folder
+@extends:
+  type: default
+  context: blueprints://pages
+  
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            overrides:
+              fields:
+                header.routable:
+                    unset@: true
+                    type: hidden
+                    label: Routable
+                    help: 'If this page is reachable by a URL'
+                    highlight: 1
+                    default: 0
+                    options:
+                        1: PLUGIN_ADMIN.ENABLED
+                        0: PLUGIN_ADMIN.DISABLED
+                    validate:
+                        type: bool

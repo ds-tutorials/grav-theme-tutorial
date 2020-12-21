@@ -1,0 +1,176 @@
+/* The basics - broadly applicable CSS */
+/* box sizing rules */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/* General */
+body {
+    margin: 0;
+    line-height: 1.4;
+    font-size: 1em;
+    letter-spacing: normal;
+    -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 1.5;
+    letter-spacing: normal;
+}
+h1 {
+    margin-bottom: .6em;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 3.2em;
+    font-weight: bold;
+}
+h2 {
+    margin-bottom: .6em;
+    line-height: 1.6;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+h3 {
+    margin-bottom: .5em;
+    font-size: 2.3em;
+    font-weight: normal;
+}
+h4 {
+    margin-bottom: .5em;
+    font-size: 1.9em;
+    font-weight: bold;
+}
+h5 {
+    margin-bottom: .5em;
+    font-size: 1.7em;
+    font-weight: normal;
+}
+h6 {
+    margin-bottom: .5em;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+a {
+    text-decoration: underline;
+}
+/* link style where hovering provides a box for easier visibility */
+a:hover, a:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-offset: 1px;
+}
+p {
+    margin: 0;
+    margin-bottom: .5em;
+}
+ul, ol {
+    margin: 0;
+    margin-bottom: .75em;
+}
+li {
+    margin: 0;
+    margin-bottom: .2em;
+}
+code {
+    /* wrap text for readability */
+    white-space: pre-wrap;
+}
+pre {
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 1em;
+    border: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+    margin: 1em auto;
+    border: none;
+}
+hr {
+    margin: 1.7em 0;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+main {
+    padding: 2em 0;
+}
+footer {
+    padding: 1em .5em;
+    border-top-width: 2px;
+    border-top-style: solid;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+table {
+    margin: 1em 0;
+}
+/* Useful Objects */
+/* skip link - every page should have one */
+#skip-link {
+    position: absolute;
+    top: -3em;
+    left: 1em;
+    transition: top .5s ease;
+    padding: .9em .6em;
+    text-decoration: underline;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+#skip-link:focus, #skip-link:active {
+    top: 1em;
+    outline: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: .5em;
+    opacity: 1;
+}
+#skip-link:hover {
+    text-decoration: none;
+}
+/* back to top - requires js to appear once user has scrolled down and disappear when user has scrolled back up */
+#back-to-top {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    opacity: 0;
+    transition: opacity .5s linear;
+}
+#back-to-top.active /* uses class "active" to indicate when to turn visible */, #back-to-top:focus {
+    opacity: 1;
+}
+/* Utilities */
+/* buttons */
+.btn {
+    display: inline-block;
+    padding: .375em .75em;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: .25em;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 1.7;
+}
+.btn:hover, .btn:focus {
+    outline: none;
+    /* make sure color changes clearly indicate when button is hovered over or focused on */
+}
+a.btn:hover, a.btn:focus {
+    /* make it clear when a button is a link */
+    text-decoration: underline;
+}
+
+/* one style for blockquotes and "notices" class */
+.notices {
+    border-width: .1em;
+    border-style: solid;
+}
+blockquote, .notices {
+    margin: 1em 0;
+    padding: .5em .5em 0 1em;
+    border-left-width: 1em;
+    border-left-style: solid;
+}

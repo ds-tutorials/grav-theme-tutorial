@@ -1,0 +1,16 @@
+{% set progress = page.collection({'items':{'@taxonomy':{'category': 'docs'}}, 'filter': {'routable': 'true', 'visible': 'true' }, 'order': {'by': 'default', 'dir': 'asc'}}) %}
+
+{% if progress.isFirst(page.path) %}
+    {% set isFirst = 'first' %}
+{% endif %}
+
+<nav aria-label="Page" class="transition contents">
+    <ul class="page-nav {{ isFirst }}">
+    {% if not progress.isFirst(page.path) %}
+        <li><a href="{{ progress.nextSibling(page.path).url }}" class="btn">Previous: {{ progress.nextSibling(page.path).menu }}</a></li>
+    {% endif %}
+    {% if not progress.isLast(page.path) %}
+        <li><a href="{{ progress.prevSibling(page.path).url }}" class="btn nav-button next-page-btn">Next: {{ progress.prevSibling(page.path).menu }}</a></li>
+    {% endif %}
+    </ul>
+</nav>

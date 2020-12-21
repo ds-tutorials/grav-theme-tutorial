@@ -1,0 +1,354 @@
+/* General Styles */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+}
+h2 {
+    border-bottom-width: .04em;
+    border-bottom-style: solid;
+}
+blockquote, pre, .notices {
+    display: flow-root;
+}
+/* blockquotes and notices */
+blockquote h2, .notices h2 {
+    border: none;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5em 1em;
+
+    font-size: 2.2em;
+    line-height: 1.2;
+}
+header a {
+    text-decoration: none;
+}
+header a:hover, header a:focus {
+    outline-width: 2px;
+    outline-style: solid;
+}
+.header-logo {
+    max-width: 13em;
+}
+.header-logo img {
+    max-width: 100%;
+    margin: 0;
+}
+.header-text {
+    margin: auto;
+}
+
+/* Page Navigation */
+
+.page-nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: initial;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+    justify-content: space-between;
+
+    font-size: 1em;
+    white-space: normal;
+    text-align: center;
+
+    background-color: transparent;
+}
+.page-nav li {
+    margin: initial;
+}
+.page-nav.first {
+    justify-content: flex-end;
+}
+
+/* Primary Navigation */
+
+/* menu toggle */
+.show-menu-wrapper {
+    display: none;
+    width: 19em;
+    padding: .5em;
+}
+#hide-menu {
+    display: none;
+    margin-bottom: .5em;
+}
+#hide-menu, #show-menu {
+    font-size: .9em;
+}
+/* sidebar */
+.sidebar-wrapper {
+    float: left;    
+    margin-bottom: 2em;
+    padding-right: 3em;
+}
+.sidebar {
+    width: 19em;
+    padding: .5em;
+    letter-spacing: .02em;
+}
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sidebar ul ul {
+    display: none;
+    padding: 0 0 0 1em;
+}
+.sidebar ul .nav-item {
+    display: block;
+    width: 100%;
+    padding: .5em 1em;
+
+    border: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+
+    cursor: pointer;
+
+    font-size: 1.2em;
+    text-align: left;
+    line-height: 2em;
+    text-decoration: none;
+
+    color: inherit;
+    background-color: transparent;
+}
+.sidebar ul ul .nav-item {
+    font-size: 1.1em;
+}
+.sidebar nav>ul>:last-child>.nav-item {
+    border: none;
+}
+.sidebar ul .nav-item:hover, .sidebar ul .nav-item:focus {
+    outline: none;
+}
+.sidebar ul a {
+    text-decoration: none;
+}
+.sidebar ul a:hover, .sidebar ul a:focus {
+    text-decoration: underline;
+}
+.sidebar ul .show>ul {
+    display: block;
+}
+.dropdown-toggle {
+    position: relative;
+}
+/* triangle toggle symbols */
+.dropdown-toggle::after {
+    position: absolute;
+    top: 50%;
+    right: 1.2em;
+    transform: translateY(-50%);
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+
+    content: "";
+    border-top: .5em solid;
+    border-right: .4em solid transparent;
+    border-bottom: 0;
+    border-left: .4em solid transparent;
+}
+.show>.dropdown-toggle::after {
+    border-top: 0;
+    border-bottom: .5em solid;
+}
+/* indicated disabled dropdown buttons */
+.sidebar button[disabled="true"].dropdown-toggle:hover, .sidebar button[disabled="true"].dropdown-toggle:focus {
+    cursor: default;
+    color: inherit;
+    background-color: inherit;
+}
+
+/* main/content */
+.wrapper {
+    margin-top: 3em;
+    margin-bottom: 5em;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+.contents {
+    margin-left: 20em;
+    margin-right: 3em;
+
+    font-size: 1.1em;
+}
+.transition {
+    transition: margin .5s linear;
+}
+/* remove extra margin when sidebar is out of sight */
+.full .transition {
+    margin-left: 3em;
+}
+
+/* chapter page */
+.chapter {
+    padding-bottom: 1.5em;
+}
+.chapter h1 {
+    margin: auto;
+    padding: 0 1em;
+
+    border-bottom-width: .05em;
+    border-bottom-style: solid;
+}
+#subtitle {
+    margin-top: .5em;
+    text-align: center;
+    font-size: 1.8em;
+}
+.chapter-data {
+    margin: .5em 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* responsive */
+@media (max-width: 1175px) {
+    .wrapper {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    header {
+        font-size: 2em;
+    }
+    .header-logo {
+        max-width: 12em;
+    }
+}
+@media (max-width: 975px) {
+    .sidebar, .show-menu-wrapper {
+        width: 18em;
+    }
+    .contents {
+        margin-left: 19em;
+    }
+    header {
+        font-size: 1.8em;
+    }
+    .header-logo {
+        max-width: 10em;
+    }
+    #hide-menu {
+        display: block;
+    }
+    /* sidebar hidden */
+    .sidebar-hidden .show-menu-wrapper {
+        display: block;
+    }
+    .sidebar-hidden .sidebar-wrapper {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .sidebar-hidden .sidebar {
+        display: none;
+    }
+    .sidebar-hidden {
+        overflow-y: scroll;
+    }
+    .sidebar-hidden .contents {
+        margin-left: 3em;
+    }
+}
+@media (max-width: 830px) {
+    .wrapper {
+        margin-top: 2.5em;
+    }
+    .contents {
+        margin-left: 17em;
+        margin-right: 2em;
+    }
+    .full .transition {
+        margin-left: 2em;
+    }
+    .sidebar-hidden .contents {
+        margin-left: 2em;
+    }
+    header {
+        font-size: 1.6em;
+    }
+    .sidebar {
+        width: 16em;
+    }
+    .sidebar ul .nav-item {
+        font-size: 1em;
+    }
+    .sidebar ul ul .nav-item {
+        font-size: .9em;
+    }
+    .sidebar-hidden .show-menu-wrapper {
+        width: 16em;
+    }
+}
+@media (max-width: 700px) {
+    .wrapper {
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .contents {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .sidebar-wrapper {
+        float: none;
+        width: 100%;
+        
+        padding-top: 2em;
+        padding-right: 0;
+    }
+    .sidebar-hidden .sidebar-wrapper {
+        margin-bottom: 2em;
+    }
+    .sidebar-hidden .show-menu-wrapper {
+        width: 100%;
+    }
+}
+@media (max-width: 430px) {
+    .contents, .full .contents, .sidebar-hidden .contents {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+    h1 {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 2.8em;
+    }
+    body {
+        word-wrap: break-word;
+    }
+}
+
+
+.copy-to-clipboard:hover, .copy-to-clipboard:focus,
+/* adding "pre" to overwrite other theme stylesheet */
+pre .copy-to-clipboard:hover, pre .copy-to-clipboard:focus {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #004fa3;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: #fff;
+    background-color: #fff;
+}
+
+.btn.hide {
+    display: none;
+}

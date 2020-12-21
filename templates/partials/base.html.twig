@@ -1,0 +1,126 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" dir="ltr">
+
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if theme_var('use_ga') and theme_var('ga_id') %}
+    <!-- Google Analytics ID -->
+    <script>
+        var gaProperty = "{{ theme_var('ga_id') }}";
+    </script>
+    <script src="{{ url('theme://js/ga.js') }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ theme_var('ga_id') }}"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{ theme_var('ga_id') }}');
+    </script>
+    {% endif %}
+
+    {# Favicon #}
+    {% set favicon = ((theme_var('favicon')|first).name) %}
+    {% if favicon %}
+        <link rel="icon" type="image/{{ favicon|split('.')|last }}" href="{{ url('theme://images/favicon/'~favicon) }}" />
+    {% else %}
+        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    {% endif %}
+    {# Page Title #}
+    {% set page_title = header.title ~ " | " ~ site.title %}
+    {% if header.title == site.title %}
+        {% set page_title = header.title %}
+    {% endif %}
+    <title>{{ page_title }}</title>
+
+    {% block stylesheets %}
+        {% do assets.addCss('theme://css-compiled/nucleus.css',102) %}
+        {% do assets.addCss('theme://css-compiled/theme.css',101) %}
+        {% do assets.addCss('theme://css/font-awesome.min.css',100) %}
+        {% do assets.addCss('theme://css/featherlight.min.css') %}
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+            {% do assets.addCss('theme://css/nucleus-ie9.css') %}
+            {% do assets.addCss('theme://css/pure-0.5.0/grids-min.css') %}
+            {% do assets.addJs('theme://js/html5shiv-printshiv.min.js') %}
+        {% endif %}
+        
+        {% do assets.addCss('theme://css/basic.css') %}
+        {% do assets.addCss('theme://css/tutorial.css') %}
+        {% do assets.addCss('theme://css/theme.css') %}
+        {% do assets.addCss('theme://css/custom.css') %}
+    {% endblock stylesheets %}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery',101) %}
+        {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
+        {% do assets.addJs('theme://js/featherlight.min.js') %}
+        {% do assets.addJs('theme://js/clipboard.min.js') %}
+        {% do assets.addJs('theme://js/jquery.scrollbar.min.js') %}
+        {% do assets.addJs('theme://js/learn.js') %}
+
+        {% do assets.addJs('theme://js/tutorial.js') %}
+        {% do assets.addJs('theme://js/custom.js') %}
+    {% endblock javascripts %}
+
+    {% block assets deferred %}
+        {{ assets.css()|raw }}
+        {{ assets.js()|raw }}
+    {% endblock assets %}
+
+{% endblock head %}
+
+</head>
+<body id="body-0" data-url="{{ page.route }}">
+    <!-- skip link -->
+    <a href="#content" id="skip-link">Skip to main content</a>
+
+    <header id="top">
+        {% include 'partials/header.html.twig' %}
+    </header>
+
+    <div class="wrapper">
+
+    {% block sidebar %}
+    <div class = "sidebar-wrapper">
+        <div class="show-menu-wrapper">
+            <button id="show-menu" class="btn" onClick="toggleMenu()">Show Menu</button>
+        </div>
+
+        <div id="sidenav" class="sidebar" aria-hidden="false">
+            <button id="hide-menu" class="btn" onClick="toggleMenu()">Hide Menu</button>
+            {% include 'partials/sidebar.html.twig' %}
+        </div>
+    </div>
+    {% endblock sidebar %}
+    
+    <div class="content-wrapper">
+    
+    {% block nav1 %}{% endblock nav1 %}
+
+    {% block body %}            
+        <main id="content">
+            {% block content %}{% endblock %}
+            <a id="back-to-top" class="btn" href="#top">Back to Top</a>
+        </main>
+    {% endblock body %}
+    
+    {% block nav2 %}{% endblock nav2 %}
+    
+    </div>
+
+    </div>
+
+    <footer>
+        {% include 'partials/footer.html.twig' %}
+    </footer>
+
+    {% block bottom %}
+        {{ assets.js('bottom')|raw }}
+    {% endblock %}
+ </body>
+</html>

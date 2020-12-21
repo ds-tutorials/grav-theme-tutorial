@@ -1,0 +1,32 @@
+title: Docs
+@extends:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      fields:
+        options:
+          type: tab
+          fields:
+            taxonomies:
+              fields:
+                header.taxonomy:
+                  unset@: true
+
+                header.taxonomy.category:
+                  type: selectize
+                  label: Category
+                  classes: fancy
+                  default: 'docs'
+                  validate:
+                    type: commalist
+
+                header.taxonomy.tag:
+                  type: selectize
+                  label: Tag
+                  classes: fancy
+                  validate:
+                    type: commalist

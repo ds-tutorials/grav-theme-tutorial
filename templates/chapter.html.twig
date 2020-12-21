@@ -1,0 +1,16 @@
+{% extends 'docs.html.twig' %}
+
+{% block content %}
+    <div class="contents chapter">
+        <h1>{{ page.title }}</h1>
+        {% if page.header.subtitle %}<p id="subtitle">{{ page.header.subtitle }}</p>{% endif %}
+        {% if page.header.isIntro %}
+            <p class="chapter-data"><span class="data-label">Lesson Level: </span>{{ page.header.intro.level|capitalize }}</p>
+            <p class="chapter-data"><span class="data-label">Last Updated: </span>{{ page.header.intro.updated }}</p>
+            <p class="chapter-data"><span class="data-label">Created By: </span>{{ page.header.intro.created }}</p>
+        {% endif %}
+    </div>
+    <div class="contents transition">
+        {{ page.content|raw }}
+    </div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% if theme_var('maintainer') %}
+<div>
+    <p>This tutorial is maintained by 
+    {% if theme_var('maintainer_url') %}
+        <a href="{{ theme_var('maintainer_url') }}">{{ theme_var('maintainer') }}</a>.
+    {% else %}
+        {{ theme_var ('maintainer') }}.
+    {% endif %}
+    </p>
+</div>
+{% endif %}
+
+{% if theme_var('license') %}
+<div>
+    <p>{% if theme_var('maintainer') %}It{% else %}This tutorial{% endif %} is licensed under a 
+    {% if theme_var('license_url') %}
+        <a href="{{ theme_var('license_url') }}">{{ theme_var('license') }}</a>.
+    {% else %}
+        {{ theme_var('license') }}.
+    {% endif %}
+    </p>
+    {% if theme_var('license_img') %}
+        <p><img alt="License" src={{ theme_var('license_img') }} /></p>
+    {% endif %}
+</div>
+{% endif %}
+
+{% if theme_var('git_link') and theme_var('show_git_link') %}
+<div>
+    <p><a href="{{ theme_var('git_link') }}">
+    {% if theme_var('git_service') %}
+        View on {{ theme_var('git_service') }}.
+    {% else %}
+        View git repository.
+    {% endif %}
+    </a></p>
+</div>
+{% endif %}
+
+{# Extra: Can add custom content via page modules/footer #}
+{% if page.find('/modules/footer') %}
+    <div>
+        {{ page.find('/modules/footer').content|raw }}
+    </div>
+{% endif %}
+
+{% if theme_var('use_ga') and theme_var('ga_privacy') %}
+<div>
+    <p>This site uses Google Analytics to track anonymous usage data. We will only use this data to measure how much the tutorial is used.</p>
+</div>
+{% endif %}
+{% if theme_var('use_ga') %}
+<div>
+    <div id="ga-opted-out"></div>
+    <div role="status" id="ga-status"></div>
+    <button class="btn hide" id="ga-btn-in" type="button" onclick="gaOptin()">Opt back in to Google Analytics</button>
+    <button class="btn" id="ga-btn-out" type="button" onclick="gaOptout()">Opt out of Google Analytics</button>
+</div>
+{% endif %}

@@ -1,0 +1,249 @@
+
+/* IMPORTANT: If modifying colors, please use a color contrast check like WebAIM's: https://webaim.org/resources/contrastchecker/ */
+/* 
+Add colors to the :root by adding the following (shown in quotations) to a new line:
+    "--name-of-color: #color-hex-code;"
+To refer to an added color, use "var(--name-of-color)"
+*/
+:root {
+    --theme-color: #070f4e; /* a generic color */
+    --theme-text: #fff; /* a text color with sufficient contrast to the theme color */
+    --nav-color: #505050; /* the color of the side navigation bar */
+    --nav-text: #fff; /* a text color with sufficient contrast to the nav color */
+}
+/* Note:
+    color: -refers to text color
+    background-color, border-color, and outline-color are self-explanatory
+*/
+
+/* Color Theme - most likely colors you would want to change */
+/* general */
+/* behavior of links when hovered over */
+a:hover, a:focus {
+    color: var(--theme-color);
+    background-color: #eee;
+}
+/* colors for inline code sections - in markdown: `inline code section` */
+code, .copy-to-clipboard {
+    color: var(--theme-color);
+    background-color: #eee;
+}
+/* horizontal line color */
+hr {
+    border-bottom-color: var(--theme-color);
+}
+/* colors of the "back to top" button */
+#back-to-top {
+    color: var(--theme-text);
+    background-color: var(--theme-color);
+}
+/* "back to top" button when hovered over */
+#back-to-top:hover, #back-to-top:focus {
+    border-color: var(--theme-color);
+    color: var(--theme-color);
+    background-color: #e2e2e2; /* could also be set to --theme-text */
+}
+/* generic colors for buttons */
+.btn {
+    border-color: #fff;
+    color: var(--theme-text);
+    background-color: var(--theme-color);
+}
+/* generic colors for buttons when hovered over */
+.btn:hover, .btn:focus {
+    border-color: var(--theme-color);
+    color: var(--theme-color);
+    background-color: #e2e2e2; /* could also be set to --theme-text */
+    box-shadow: 0 0 2px 2px rgba(76, 76, 76, .5); /* a dark shadow */
+}
+/* header - the top bar of the website */
+header {
+    color: var(--theme-color);
+    background-color: #e2e2e2;
+}
+/* header link color - should be the same as header color, for consistency */
+header a {
+    color: var(--theme-color);
+}
+/* navigation */
+/* colors for hide/show menu buttons on side navigation bar */
+#hide-menu, #show-menu {
+    border-color: #aaa;
+}
+/* colors for hide/show menu buttons on side navigation bar when hovered over */
+#hide-menu:hover, #hide-menu:focus, #show-menu:hover, #show-menu:focus {
+    border-color: var(--theme-color);
+    box-shadow: 0 0 2px 2px rgba(255,255,255,.5); /* a light shadow */
+}
+.sidebar-wrapper {
+    /* this should match body background-color - if not change that, do not change this */
+    background-color: #fff;
+}
+/* the side navigation bar */
+.sidebar, .show-menu-wrapper {
+    color: var(--nav-text);
+    background-color: var(--nav-color);
+}
+/* set the color of the lines separating items in the side navigation bar */
+.sidebar ul .nav-item {
+    border-bottom-color: #aaa;
+}
+/* the color of a navigation menu item when hovered over */
+.sidebar ul .nav-item:hover, .sidebar ul .nav-item:focus {
+    color: var(--theme-text);
+    background-color: var(--theme-color);
+}
+/* the color of the navigation menu item indicating the current page */
+.sidebar ul .active .nav-item {
+    color: #222;
+    background-color: #fff;
+}
+/* footer */
+footer {
+    border-top-color: var(--theme-color); /* border separating footer from main page */
+    background-color: #eee;
+}
+/* responsive */
+@media (max-width: 700px) {
+    .sidebar-wrapper {
+        /* this should be the same color as the header background */
+        background-color: #e2e2e2;
+    }
+}
+
+/* Standard Colors */
+/* general */
+/* the main text and background colors of the page */
+body {
+    color: #333;
+    background-color: #fff;
+}
+/* color of the line under heading level two */
+h2 {
+    border-bottom-color: #333;
+}
+/* link color - modified from default to provide better color contrast */
+a {
+    color: #004fa3;
+}
+/* link outline color when hovered over */
+a:hover, a:focus {
+    outline-color: #004fa3;
+}
+/* colors for the link to skip to main content (hidden unless it receives focus) */
+#skip-link {
+    border-color: #333;
+    color: #004fa3;
+    background-color: #fff;
+    box-shadow: 0 0 2px 2px rgba(76, 76, 76, .5); /* dark shadow */
+}
+/* colors for blockquotes */
+blockquote {
+    border-left-color: #333;
+    color: #333;
+    background-color: #eee;
+}
+blockquote p {
+    /* required to overwite another stylesheet - this should be the same as blockquote color */
+    color: #333;
+}
+/* colors for markdown notices */
+.notices.yellow {
+    border-color: #daa520;
+}
+.notices.green {
+    border-color: #228b22;
+}
+.notices.red {
+    border-color: #b22222;
+}
+.notices.blue {
+    border-color: #0000cd;
+}
+/* header - outline for header link when hovered over */
+header a:hover, header a:focus {
+    outline-color: #333;
+    background-color: transparent;
+}
+/* content */
+/* color of the bottom line for heading level one on chapter pages (regular docs pages heading ones do not have a bottom border */
+.chapter h1 {
+    border-bottom-color: #ccc;
+}
+/* highlight plugin (syntax highlighting) - if you aren't sure what this is, you should be fine to not bother modifying it */
+/*
+Sunburst-like style (c) Vasily Polovnyov <vast@whiteants.net>
+
+modified by Theo for better color contrast ratios
+*/
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #121212;
+    color: #f8f8f8;
+}
+/* added pre so that padding would match background */
+pre {
+    background-color: #121212;
+}
+.hljs-comment, .hljs-quote {
+    color: #aeaeae;
+    font-style: italic;
+}
+.hljs-keyword, .hljs-selector-tag, .hljs-type {
+    color: #e28964;
+}
+.hljs-string {
+    color: #73bd51;
+}
+.hljs-subst {
+  color: #daefa3;
+}
+.hljs-regexp, .hljs-link {
+  color: #e9c062;
+}
+.hljs-title, .hljs-section, .hljs-tag, .hljs-name {
+  color: #89bdff;
+}
+.hljs-class .hljs-title, .hljs-doctag {
+  text-decoration: underline;
+}
+.hljs-symbol, .hljs-bullet, .hljs-number {
+  color: #bd99ff;
+}
+.hljs-params, .hljs-variable, .hljs-template-variable {
+  color: #bd99ff;
+}
+.hljs-attribute {
+  color: #cda869;
+}
+.hljs-meta {
+  color: #95a1b1;
+}
+.hljs-formula {
+  background-color: #0e2231;
+  color: #f8f8f8;
+  font-style: italic;
+}
+.hljs-addition {
+  background-color: #253b22;
+  color: #f8f8f8;
+}
+.hljs-deletion {
+  background-color: #420e09;
+  color: #f8f8f8;
+}
+.hljs-selector-class {
+  color: #caa67d;
+}
+.hljs-selector-id {
+  color: #a3adbd;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}

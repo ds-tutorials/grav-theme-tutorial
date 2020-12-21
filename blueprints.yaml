@@ -1,0 +1,153 @@
+name: Tutorial Template
+version: 0.1.0
+description: "A tutorial theme, built for digital accessibility"
+icon: university
+author:
+  name: Theo Acker/University of Oklahoma
+  email: theoacker@ou.edu
+  url: https://libraries.ou.edu/users/theo-acker
+homepage: https://github.com/TheoAcker12/tutorial-template
+demo: https://www.ds-tutorials.oucreate.com/tutorial-template
+keywords: learn2, tutorial
+bugs: https://github.com/TheoAcker12/tutorial-template/issues
+license: CC BY-SA 4.0
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+  - learn2
+  
+form:
+  validation: loose
+  fields:
+  
+    git_link:
+      type: text
+      label: Git Link
+    
+    logo_section:
+      type: section
+      title: Logo Options
+      underline: true
+
+    favicon:
+      type: file
+      label: Favicon
+      help: The favicon is the website icon shown in the address bar and bookmarks list.
+      size: large
+      destination: 'theme://images/favicon'
+      multiple: false
+      markdown: true
+      description: Will be used instead of the default favicon `theme://images/favicon.png`
+      accept:
+        - image/*
+      
+    custom_logo:
+      type: file
+      label: Logo
+      help: The logo appears in the header at the top of the page.
+      size: large
+      destination: 'theme://images/logo'
+      multiple: false
+      markdown: true
+      description: If not set, logo text will be shown instead.
+      accept:
+        - image/*
+      
+    custom_logo_text:
+      type: text
+      label: Logo (Text)
+      help: The logo appears in the header at the top of the page.
+      size: large
+      description: If no logo image is set, this text will be shown instead. If this is not set either, only the site title will be shown in the header.
+      
+    home_url:
+      type: text
+      label: Home URL
+      size: large
+      description: The logo of the home institution for this tutorial. Clicking on the logo will take users to this link. If left blank, the logo will not be a link.
+
+    logo_alt:
+      type: text
+      label: Logo Alt Text
+      size: large
+      description: If the logo image is a link, this is required to let users know where the link will take them. Otherwise, use this to provide information about the logo.
+
+    ga_scetion:
+      type: section
+      title: Google Analytics
+      underline: true
+
+    use_ga:
+      type: toggle
+      label: Use Google Analytics
+      description: See the theme ReadMe for more information. You will need to provide a measurement ID.
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+
+    ga_id:
+      type: text
+      label: GA Measurement ID
+
+    ga_privacy:
+      type: toggle
+      label: Use Default GA Privacy Policy
+      description: The policy text will be added to the footer of the website if Google Analytics is used.
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+
+    footer_section:
+      type: section
+      title: Footer Options
+      underline: true
+
+    maintainer:
+      type: text
+      label: Tutorial Maintainer
+      size: large
+      description: The maintainer of the tutorial. Will be displayed in the footer.
+    
+    maintainer_url:
+      type: text
+      label: Tutorial Maintainer URL
+      size: large
+      description: Will make the tutorial maintainer name a link to this location.
+
+    license:
+      type: text
+      label: Tutorial License
+      size: large
+      description: The name of the license this tutorial is released under.
+
+    license_url:
+      type: text
+      label: Tutorial License URL
+      size: large
+      description: Link to the full text of the license. Will make the tutorial license name a link to this location.
+
+    license_img:
+      type: text
+      label: Tutorial License Image
+      size: large
+      description: Link to an image for the license.
+    
+    show_git_link:
+      type: toggle
+      label: Show Git Link
+      help: Only relevant if a git link has been provided
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+    
+    git_service:
+      type: text
+      label: Git Hosting Service
+      description: The hosting service for the git repository. For example, GitHub.
+      default: GitHub
