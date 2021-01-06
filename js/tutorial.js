@@ -1,4 +1,6 @@
 jQuery(document).ready(function() {
+    setHeadingIds();
+    scrollFunction();
     // expand sidenav dropdowns as needed
     let dropdowns = document.getElementsByClassName("dropdown-toggle");
     for (let i = 0; i < dropdowns.length; i++) {
@@ -91,6 +93,8 @@ jQuery(document).ready(function() {
     }
 });
 
+setTimeout(() => {  document.getElementById("body-0").classList.remove("start"); }, 500);
+
 function addClipboard(element) {
     newElement = document.createElement("button");
 }
@@ -150,4 +154,59 @@ function scrollFunction() {
     } else {
         content.classList.remove("full");
     }
+}
+
+// Enable smoother transition to links within a page
+jQuery(window).on('hashchange', function(){
+    document.getElementById("body-0").classList.add("start");
+    id = location.hash.replace("#", "");
+    console.log(id);
+    setTimeout(() => {  document.getElementById(id).scrollIntoView(); }, 10);
+    document.getElementById(id).scrollIntoView(true);
+    setTimeout(() => {  document.getElementById("body-0").classList.remove("start"); }, 100);
+});
+
+/**
+ * Give headings ids
+ */
+function setHeadingIds() {
+    // get all headings
+    let headingLabels = ["h1", "h2", "h3", "h4", "h5", "h6"];
+    let headings = [];
+    headingLabels.forEach(function(label) {
+        let items = document.getElementsByTagName(label);
+        for (let i = 0; i < items.length; i++) {
+            headings.push(items[i]);
+        }
+    });
+    // set ids for all headings
+    headings.forEach(setHeadingId);
+}
+
+function setHeadingId(heading) {
+    // if heading already has an id, ignore
+    if (heading.id) {
+        return;
+    }
+    // form id from heading text
+    let id = heading.innerText;
+    // if text is too long, truncate it
+    if (id.length > 30) {
+        id = id.substr(0, 30);
+        // if possible, don't cut up any words
+        let lastSpace = id.lastIndexOf(" ");
+        if (lastSpace > 10) {
+            id = id.substr(0, lastSpace);
+        }
+    }
+    // format
+    id = id.toLowerCase();
+    id = id.replace(/ /g, "-");
+    // if the id is already in use on the page, modify it
+    idCount = 0;
+    while (document.getElementById(id)) {
+        idCount++;
+        id = id.concat("-", idCount);
+    }
+    heading.id = id;
 }

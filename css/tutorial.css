@@ -9,6 +9,15 @@ h2 {
     border-bottom-width: .04em;
     border-bottom-style: solid;
 }
+/* option to pad heading from top of page when jumping */
+h2::before, h3::before, h4::before, h5::before, h6::before {
+    display: block;
+    content: " ";
+    margin-top: -5rem;
+    height: 5rem;
+    visibility: hidden;
+    pointer-events: none;
+}
 blockquote, pre, .notices {
     display: flow-root;
 }
@@ -187,11 +196,15 @@ header a:hover, header a:focus {
     font-size: 1.1em;
 }
 .transition {
-    transition: margin .5s linear;
+    transition: margin .5s ease-in-out;
 }
 /* remove extra margin when sidebar is out of sight */
 .full .transition {
     margin-left: 3em;
+}
+/* prevent weird behavior when initially loading the page */
+.start .transition {
+    transition: none;
 }
 
 /* chapter page */
