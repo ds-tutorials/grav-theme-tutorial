@@ -72,7 +72,7 @@ form:
       size: large
       description: If the logo image is a link, this is required to let users know where the link will take them. Otherwise, use this to provide information about the logo.
 
-    ga_scetion:
+    ga_section:
       type: section
       title: Google Analytics
       underline: true

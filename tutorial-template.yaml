@@ -1,4 +1,15 @@
 enabled: true
+git_link:
+favicon:
+custom_logo:
+custom_logo_text:
+home_url:
+logo_alt:
+use_ga: true
+ga_id:
+ga_privacy: true
+maintainer:
+maintainer_url:
 license: Creative Commons Attribution-ShareAlike 4.0 International License
 license_url: https://creativecommons.org/licenses/by-sa/4.0/
 license_img: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
