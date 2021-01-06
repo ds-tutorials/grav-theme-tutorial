@@ -80,21 +80,21 @@ header a {
     background-color: #fff;
 }
 /* the side navigation bar */
-.sidebar, .show-menu-wrapper {
+#sidenav, .show-menu-wrapper {
     color: var(--nav-text);
     background-color: var(--nav-color);
 }
 /* set the color of the lines separating items in the side navigation bar */
-.sidebar ul .nav-item {
+#sidenav ul .nav-item {
     border-bottom-color: #aaa;
 }
 /* the color of a navigation menu item when hovered over */
-.sidebar ul .nav-item:hover, .sidebar ul .nav-item:focus {
+#sidenav ul .nav-item:hover, .sidebar ul .nav-item:focus {
     color: var(--theme-text);
     background-color: var(--theme-color);
 }
 /* the color of the navigation menu item indicating the current page */
-.sidebar ul .active .nav-item {
+#sidenav ul .active .nav-item {
     color: #222;
     background-color: #fff;
 }

@@ -2,12 +2,3 @@
 
 {% block nav1 %}{% include 'partials/prev_next.html.twig' %}{% endblock nav1 %}
 {% block nav2 %}{% include 'partials/prev_next.html.twig' %}{% endblock nav2 %}
-
-{% block content %}
-    <div class="contents docs">
-        <h1>{{ page.title }}</h1>
-    </div>
-    <div class="contents transition">
-        {{ page.content|raw }}
-    </div>
-{% endblock content %}

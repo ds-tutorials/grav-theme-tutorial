@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
     setHeadingIds();
     scrollFunction();
     // expand sidenav dropdowns as needed
-    let dropdowns = document.getElementsByClassName("dropdown-toggle");
+    let dropdowns = document.getElementsByClassName("toggle-btn");
     for (let i = 0; i < dropdowns.length; i++) {
         let button = dropdowns[i];
         let expanded = window.sessionStorage.getItem(button.getAttribute("id").concat("_expanded"));
@@ -100,7 +100,7 @@ function addClipboard(element) {
 }
 
 /**
- * Function for toggling sidenav menus
+ * Toggle sidenav menus
  * 
  * @param {string} id - the id attribute of the button calling the function
  */
@@ -108,10 +108,10 @@ function submenuToggle(id) {
     let button = document.getElementById(id);
     let expanded = id.concat("_expanded");
     // change button info
-    if (button.getAttribute("aria-expanded") === "true") {
+    if (button.getAttribute("aria-expanded") === "true") { // list is collapsed
         button.setAttribute("aria-expanded", "false");
         window.sessionStorage.setItem(expanded, "false");
-    } else {
+    } else { // list is expanded
         button.setAttribute("aria-expanded", "true");
         window.sessionStorage.setItem(expanded, "true");
     }

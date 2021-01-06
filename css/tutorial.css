@@ -18,10 +18,10 @@ h2::before, h3::before, h4::before, h5::before, h6::before {
     visibility: hidden;
     pointer-events: none;
 }
+/* blockquotes and notices */
 blockquote, pre, .notices {
     display: flow-root;
 }
-/* blockquotes and notices */
 blockquote h2, .notices h2 {
     border: none;
 }
@@ -100,21 +100,21 @@ header a:hover, header a:focus {
     margin-bottom: 2em;
     padding-right: 3em;
 }
-.sidebar {
+#sidenav {
     width: 19em;
     padding: .5em;
     letter-spacing: .02em;
 }
-.sidebar ul {
+#sidenav ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.sidebar ul ul {
+#sidenav ul ul {
     display: none;
     padding: 0 0 0 1em;
 }
-.sidebar ul .nav-item {
+#sidenav .nav-item {
     display: block;
     width: 100%;
     padding: .5em 1em;
@@ -133,29 +133,29 @@ header a:hover, header a:focus {
     color: inherit;
     background-color: transparent;
 }
-.sidebar ul ul .nav-item {
+#sidenav ul ul .nav-item {
     font-size: 1.1em;
 }
-.sidebar nav>ul>:last-child>.nav-item {
+#sidenav nav>ul>:last-child>.nav-item {
     border: none;
 }
-.sidebar ul .nav-item:hover, .sidebar ul .nav-item:focus {
+#sidenav .nav-item:hover, #sidenav .nav-item:focus {
     outline: none;
 }
-.sidebar ul a {
+#sidenav a.nav-item {
     text-decoration: none;
 }
-.sidebar ul a:hover, .sidebar ul a:focus {
+#sidenav a.nav-item:hover, #sidenav a.nav-item:focus {
     text-decoration: underline;
 }
-.sidebar ul .show>ul {
+#sidenav .show>ul {
     display: block;
 }
-.dropdown-toggle {
+.toggle-btn {
     position: relative;
 }
 /* triangle toggle symbols */
-.dropdown-toggle::after {
+.toggle-btn::after {
     position: absolute;
     top: 50%;
     right: 1.2em;
@@ -171,12 +171,12 @@ header a:hover, header a:focus {
     border-bottom: 0;
     border-left: .4em solid transparent;
 }
-.show>.dropdown-toggle::after {
+.show>.toggle-btn::after {
     border-top: 0;
     border-bottom: .5em solid;
 }
-/* indicated disabled dropdown buttons */
-.sidebar button[disabled="true"].dropdown-toggle:hover, .sidebar button[disabled="true"].dropdown-toggle:focus {
+/* indicate disabled nav buttons */
+#sidenav button[disabled="true"].toggle-btn:hover, #sidenav button[disabled="true"].toggle-btn:focus {
     cursor: default;
     color: inherit;
     background-color: inherit;
@@ -243,7 +243,7 @@ header a:hover, header a:focus {
     }
 }
 @media (max-width: 975px) {
-    .sidebar, .show-menu-wrapper {
+    #sidenav, .show-menu-wrapper {
         width: 18em;
     }
     .contents {
@@ -266,7 +266,7 @@ header a:hover, header a:focus {
         margin-bottom: 0;
         padding-bottom: 0;
     }
-    .sidebar-hidden .sidebar {
+    .sidebar-hidden #sidenav {
         display: none;
     }
     .sidebar-hidden {
@@ -293,13 +293,13 @@ header a:hover, header a:focus {
     header {
         font-size: 1.6em;
     }
-    .sidebar {
+    #sidenav {
         width: 16em;
     }
-    .sidebar ul .nav-item {
+    #sidenav ul .nav-item {
         font-size: 1em;
     }
-    .sidebar ul ul .nav-item {
+    #sidenav ul ul .nav-item {
         font-size: .9em;
     }
     .sidebar-hidden .show-menu-wrapper {
@@ -316,7 +316,7 @@ header a:hover, header a:focus {
         margin-left: 2em;
         margin-right: 2em;
     }
-    .sidebar {
+    #sidenav {
         width: 100%;
     }
     .sidebar-wrapper {

@@ -4,11 +4,11 @@
     {% for p in page.children.visible %}
         {% set parent_page = p.activeChild ? ' parent' : '' %}
         {% set current_page = p.active ? ' active' : '' %}
-        <li class="dd-item{{ parent_page }}{{ current_page }}" data-nav-id="{{ p.route }}">
+        <li class="dd-item {{ parent_page }}{{ current_page }}" data-nav-id="{{ p.route }}">
 
         {% if p.children.count > 0 %}
-            <button class="dropdown-toggle nav-item" id="{{ p.route }}-toggle" submenuid="{{ p.route }}-dropdown"
-                onClick="submenuToggle(id)" aria-expanded="false">
+            <button class="toggle-btn nav-item" id="{{ p.route }}-toggle" submenuid="{{ p.route }}-dropdown"
+                onClick="submenuToggle(id)" aria-expanded="false" aria-controls="{{ p.route }}-dropdown">
                 {{ p.menu }}
             </button>
             <ul class="collapse" id="{{ p.route }}-dropdown">
