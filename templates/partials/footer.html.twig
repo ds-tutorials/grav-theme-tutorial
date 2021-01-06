@@ -49,7 +49,7 @@
     <p>This site uses Google Analytics to track anonymous usage data. We will only use this data to measure how much the tutorial is used.</p>
 </div>
 {% endif %}
-{% if theme_var('use_ga') %}
+{% if theme_var('use_ga') and theme_var('ga_id') %}
 <div>
     <div id="ga-opted-out"></div>
     <div role="status" id="ga-status"></div>
