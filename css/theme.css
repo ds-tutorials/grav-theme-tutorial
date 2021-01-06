@@ -188,6 +188,9 @@ modified by Theo for better color contrast ratios
 pre {
     background-color: #121212;
 }
+.hljs-built_in, .hljs-code {
+    color: #73bd51;
+}
 .hljs-comment, .hljs-quote {
     color: #aeaeae;
     font-style: italic;
