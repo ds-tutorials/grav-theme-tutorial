@@ -139,6 +139,10 @@ header a:hover, header a:focus {
 #sidenav nav>ul>:last-child>.nav-item {
     border: none;
 }
+#sidenav nav>ul>:last-child>.nav-item.toggle-btn {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
 #sidenav .nav-item:hover, #sidenav .nav-item:focus {
     outline: none;
 }
