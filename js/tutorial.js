@@ -86,7 +86,7 @@ jQuery(document).ready(function() {
     });
 
     /* replace footer text if opted out. */
-    if (window[disableGA]) {
+    if (window.sessionStorage.getItem("disableGA") === "true") {
         document.getElementById("ga-opted-out").innerHTML = "You are opted out of Google Analytics on this site."
         document.getElementById("ga-btn-out").classList.toggle("hide");
         document.getElementById("ga-btn-in").classList.toggle("hide");
