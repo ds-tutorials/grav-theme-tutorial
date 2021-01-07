@@ -162,6 +162,9 @@ a.btn:hover, a.btn:focus {
     /* make it clear when a button is a link */
     text-decoration: underline;
 }
+.btn.hide {
+    display: none;
+}
 
 /* one style for blockquotes and "notices" class */
 .notices {

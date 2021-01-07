@@ -13,17 +13,27 @@ h2 {
 h2::before, h3::before, h4::before, h5::before, h6::before {
     display: block;
     content: " ";
-    margin-top: -5rem;
-    height: 5rem;
+    margin-top: -2.3em;
+    height: 2.3em;
     visibility: hidden;
     pointer-events: none;
 }
-/* blockquotes and notices */
-blockquote, pre, .notices {
+/* smoother display */
+blockquote, pre, .notices, ol, ul {
     display: flow-root;
 }
+/* blockquotes and notices */
 blockquote h2, .notices h2 {
     border: none;
+}
+/* copy to clipboard buttons */
+.copy-to-clipboard:hover, .copy-to-clipboard:focus,
+/* adding "pre" to overwrite other learn2 stylesheet */
+pre .copy-to-clipboard:hover, pre .copy-to-clipboard:focus {
+    border-width: 2px;
+    border-style: solid;
+    outline-width: 1px;
+    outline-style: solid;
 }
 
 /* Header */
@@ -31,10 +41,10 @@ blockquote h2, .notices h2 {
 header {
     display: flex;
     flex-wrap: wrap;
-    padding: .5em 1em;
+    padding: .3em .5em;
 
-    font-size: 2.2em;
-    line-height: 1.2;
+    font-size: 2.3em;
+    line-height: 2.1;
 }
 header a {
     text-decoration: none;
@@ -44,14 +54,17 @@ header a:hover, header a:focus {
     outline-style: solid;
 }
 .header-logo {
-    max-width: 13em;
+    max-width: 35%;
+    min-width: 10em;
 }
 .header-logo img {
-    max-width: 100%;
     margin: 0;
 }
 .header-text {
     margin: auto;
+}
+.header-logo, .header-text {
+    padding: .3em .5em;
 }
 
 /* Page Navigation */
@@ -200,7 +213,7 @@ header a:hover, header a:focus {
     font-size: 1.1em;
 }
 .transition {
-    transition: margin .5s ease-in-out;
+    transition: margin 1s ease;
 }
 /* remove extra margin when sidebar is out of sight */
 .full .transition {
@@ -240,10 +253,7 @@ header a:hover, header a:focus {
         margin-left: 1em;
     }
     header {
-        font-size: 2em;
-    }
-    .header-logo {
-        max-width: 12em;
+        font-size: 2.15em;
     }
 }
 @media (max-width: 975px) {
@@ -254,10 +264,7 @@ header a:hover, header a:focus {
         margin-left: 19em;
     }
     header {
-        font-size: 1.8em;
-    }
-    .header-logo {
-        max-width: 10em;
+        font-size: 2em;
     }
     #hide-menu {
         display: block;
@@ -295,7 +302,7 @@ header a:hover, header a:focus {
         margin-left: 2em;
     }
     header {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
     #sidenav {
         width: 16em;
@@ -327,7 +334,7 @@ header a:hover, header a:focus {
         float: none;
         width: 100%;
         
-        padding-top: 2em;
+        padding-top: 1em;
         padding-right: 0;
     }
     .sidebar-hidden .sidebar-wrapper {
@@ -351,21 +358,4 @@ header a:hover, header a:focus {
     body {
         word-wrap: break-word;
     }
-}
-
-
-.copy-to-clipboard:hover, .copy-to-clipboard:focus,
-/* adding "pre" to overwrite other theme stylesheet */
-pre .copy-to-clipboard:hover, pre .copy-to-clipboard:focus {
-    border-width: 2px;
-    border-style: solid;
-    border-color: #004fa3;
-    outline-width: 1px;
-    outline-style: solid;
-    outline-color: #fff;
-    background-color: #fff;
-}
-
-.btn.hide {
-    display: none;
 }

@@ -137,6 +137,14 @@ a:hover, a:focus {
     background-color: #fff;
     box-shadow: 0 0 2px 2px rgba(76, 76, 76, .5); /* dark shadow */
 }
+/* colors for the copy-to-clipboard buttons for code blocks */
+.copy-to-clipboard:hover, .copy-to-clipboard:focus,
+/* adding "pre" to overwrite other learn2 stylesheet */
+pre .copy-to-clipboard:hover, pre .copy-to-clipboard:focus {
+    border-color: #004fa3;
+    outline-color: #fff;
+    background-color: #fff;
+}
 /* colors for blockquotes */
 blockquote {
     border-left-color: #333;
