@@ -110,8 +110,6 @@ header a:hover, header a:focus {
 /* sidebar */
 .sidebar-wrapper {
     float: left;    
-    margin-bottom: 2em;
-    padding-right: 3em;
 }
 #sidenav {
     width: 19em;
