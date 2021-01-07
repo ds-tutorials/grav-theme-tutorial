@@ -1,20 +1,20 @@
-enabled: true
-git_link:
-favicon:
-custom_logo:
-custom_logo_text:
-home_url:
-logo_alt:
-use_ga: true
-ga_id:
-ga_privacy: true
-maintainer:
-maintainer_url:
-license: Creative Commons Attribution-ShareAlike 4.0 International License
-license_url: https://creativecommons.org/licenses/by-sa/4.0/
-license_img: https://i.creativecommons.org/l/by-sa/4.0/88x31.png
-show_git_link: true
-git_service: GitHub
+enabled: true               # Enable the theme
+git_link:                   # Link to a GitHub repository syncing with the site's pages folder
+favicon:                    # Custom favicon to use instead of the default Grav favicon
+custom_logo:                # Custom logo to use if desired
+custom_logo_text:           # Optional, custom text if not using a logo image
+home_url:                   # Will turn the logo into a link to this URL
+logo_alt:                   # Alternative text if using a logo image
+use_ga: true                # Accepts true or false, enables Google Analytics
+ga_id:                      # Google Analytics id (should start with "G-")
+ga_privacy: true            # Enables using the default included Google Analytics privacy statement in the footer, will only be used if Google Analytics is enabled and an id has been provided. Disable this if you are providing your own statement.
+maintainer:                 # The site/tutorial maintainer
+maintainer_url:             # Link to the site/tutorial maintainer's website
+license:                    # License the website content will be shared under
+license_url:                # Link to full license from above
+license_img:                # Link to license image if desired
+show_git_link: true         # Adds the git_link provided above to the site footer
+git_service: GitHub         # The provided git link will read: "View on <git_service>"
 
 streams:
  schemes:
