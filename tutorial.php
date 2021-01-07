@@ -4,6 +4,6 @@ namespace Grav\Theme;
 use Grav\Common\Grav;
 use Grav\Common\Theme;
 
-class TutorialTemplate extends Learn2 {
+class Tutorial extends Learn2 {
 
 }

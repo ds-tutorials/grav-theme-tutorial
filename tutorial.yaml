@@ -22,5 +22,5 @@ streams:
      type: ReadOnlyStream
      prefixes:
        '':
-       - themes://tutorial-template
+       - themes://tutorial
        - themes://learn2
