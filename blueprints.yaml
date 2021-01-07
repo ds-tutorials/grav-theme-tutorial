@@ -6,10 +6,10 @@ author:
   name: Theo Acker/University of Oklahoma
   email: theoacker@ou.edu
   url: https://libraries.ou.edu/users/theo-acker
-homepage: https://github.com/TheoAcker12/tutorial-template
+homepage: https://github.com/ds-tutorials/tutorial-template
 demo: https://www.ds-tutorials.oucreate.com/tutorial-template
 keywords: learn2, tutorial
-bugs: https://github.com/TheoAcker12/tutorial-template/issues
+bugs: https://github.com/ds-tutorials/tutorial-template/issues
 license: CC BY-SA 4.0
 
 dependencies:
