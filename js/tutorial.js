@@ -142,14 +142,14 @@ window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
     button = document.getElementById("back-to-top");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
         button.classList.add("active");
     } else {
         button.classList.remove("active");
     }
     content = document.getElementById("body-0");
     height = document.getElementById("sidenav").getBoundingClientRect().bottom;
-    if (height <= -100) {
+    if (height <= -200) {
         content.classList.add("full");
     } else {
         content.classList.remove("full");
