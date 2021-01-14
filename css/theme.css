@@ -82,7 +82,7 @@ header a {
     box-shadow: 0 0 2px 2px rgba(255,255,255,.5); /* a light shadow */
 }
 .sidebar-wrapper {
-    /* this should match body background-color - if not change that, do not change this */
+    /* this should match body background-color - if not changing that, do not change this */
     background-color: #fff;
 }
 /* the side navigation bar */
