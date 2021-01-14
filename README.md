@@ -1,8 +1,8 @@
 # Tutorial Theme
 
-![theme screenshot with basic page layout](https://ds-tutorials.oucreate.com/tutorial-template/)
+![theme screenshot with basic page layout](screenshot.jpg)
 
-**Tutorial** is a Grav theme designed for creating accessible tutorials. Check out the [demo website](https://www.ds-tutorials.oucreate.com/tutorial-template) to see how it looks in action.
+**Tutorial** is a Grav theme designed for creating accessible tutorials. Check out the [demo website](https://www.ds-tutorials.oucreate.com/grav-tutorial-demo) to see how it looks in action.
 
 ## Requirements
 
@@ -65,7 +65,7 @@ To manually update Tutorial:
 
 ## Setup
 
-More extensive setup instructions and information can be found on the [demo website](https://www.ds-tutorials.oucreate.com/tutorial-template)
+More extensive setup instructions and information can be found on the [demo website](https://www.ds-tutorials.oucreate.com/grav-tutorial-demo)
 
 If you want to set Tutorial as the default theme and are using the Admin plugin, you can do so by going to **Themes**, finding Tutorial, and clicking **Activate**. Otherwise, follow these steps:
 
