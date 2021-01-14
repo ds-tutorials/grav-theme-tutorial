@@ -1,3 +1,9 @@
+/* If a logo and link are both provided, this option determines whether or not, when hovered over or receiving focus, the logo receives an outline. Uncomment it if you would like the outline. Comment it out if you do not want it. */
+/*
+header a {
+    display: block;
+}
+*/
 
 /* IMPORTANT: If modifying colors, please use a color contrast check like WebAIM's: https://webaim.org/resources/contrastchecker/ */
 /* 
@@ -12,7 +18,7 @@ To refer to an added color, use "var(--name-of-color)"
     --nav-text: #fff; /* a text color with sufficient contrast to the nav color */
 }
 /* Note:
-    color: -refers to text color
+    color: refers to text color
     background-color, border-color, and outline-color are self-explanatory
 */
 

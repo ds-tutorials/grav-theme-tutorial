@@ -1,16 +1,16 @@
 name: Tutorial
-version: 0.1.0
+version: 1.0.0
 description: "A tutorial theme, built for digital accessibility"
 icon: university
 author:
-  name: Theo Acker/University of Oklahoma
+  name: Theo Acker/University of Oklahoma Libraries
   email: theoacker@ou.edu
   url: https://libraries.ou.edu/users/theo-acker
-homepage: https://github.com/ds-tutorials/tutorial-template
-demo: https://www.ds-tutorials.oucreate.com/tutorial-template
+homepage: https://github.com/ds-tutorials/grav-theme-tutorial
+demo: https://ds-tutorials.oucreate.com/tutorial-template
 keywords: learn2, tutorial
-bugs: https://github.com/ds-tutorials/tutorial-template/issues
-license: CC BY-SA 4.0
+bugs: https://github.com/ds-tutorials/grav-theme-tutorial/issues
+license: MIT
 
 dependencies:
   - { name: grav, version: '>=1.6.0' }

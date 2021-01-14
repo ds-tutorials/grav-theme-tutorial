@@ -8,6 +8,7 @@ form:
     tabs:
       type: tabs
       fields:
+        # ensure that the 'docs' category is set - from theme Learn2 Git Sync
         options:
           type: tab
           fields:

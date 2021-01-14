@@ -4,8 +4,6 @@
 
 **Tutorial** is a Grav theme designed for creating accessible tutorials. Check out the [demo website](https://www.ds-tutorials.oucreate.com/tutorial-template) to see how it looks in action.
 
->> NOTE: The following instructions apply after this theme has been added to the GPM (Grav Package Manager).
-
 ## Requirements
 
 Tutorial extends the [Learn2](https://github.com/getgrav/grav-theme-learn2) theme. You will need to install both themes before you can use the Tutorial theme. You should also have [Grav](https://github.com/getgrav/grav) version 1.6.0 or greater.
@@ -141,8 +139,6 @@ Tutorial is designed for digital accessibility, but does not guarantee that your
 ### Supported/Recommended Plugins
 
 - Admin
-- Admin Addon Media Rename
-- Email
 - Error
 - Form
 - Git Sync

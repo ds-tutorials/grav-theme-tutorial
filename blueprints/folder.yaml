@@ -11,6 +11,7 @@ form:
           fields:
             overrides:
               fields:
+                # by default, folder should not be routable
                 header.routable:
                     unset@: true
                     type: hidden

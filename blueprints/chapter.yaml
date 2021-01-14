@@ -36,6 +36,7 @@ form:
             header.intro.created:
               type: text
               label: Created By
+        # ensure that the 'docs' category is set - from theme Learn2 Git Sync
         options:
           type: tab
           fields:

@@ -109,7 +109,9 @@ header a:hover, header a:focus {
 }
 /* sidebar */
 .sidebar-wrapper {
-    float: left;    
+    float: left;
+    padding-right: 3em;
+    padding-bottom: 2em;
 }
 #sidenav {
     width: 19em;
@@ -331,9 +333,12 @@ header a:hover, header a:focus {
     .sidebar-wrapper {
         float: none;
         width: 100%;
+
+        margin-bottom: 1em;
         
         padding-top: 1em;
         padding-right: 0;
+        padding-bottom: 0;
     }
     .sidebar-hidden .sidebar-wrapper {
         margin-bottom: 2em;
