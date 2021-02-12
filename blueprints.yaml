@@ -13,7 +13,7 @@ bugs: https://github.com/ds-tutorials/grav-theme-tutorial/issues
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.6.0' }
+  - { name: grav, version: '>=1.7.0' }
   - learn2
   
 form:
