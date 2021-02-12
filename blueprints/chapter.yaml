@@ -1,7 +1,4 @@
-title: Chapter
-@extends:
-  type: default
-  context: blueprints://pages
+extends@: default
 
 form:
   fields:
