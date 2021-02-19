@@ -10,14 +10,14 @@ h2 {
     border-bottom-style: solid;
 }
 /* option to pad heading from top of page when jumping */
-h2::before, h3::before, h4::before, h5::before, h6::before {
+/* h2::before, h3::before, h4::before, h5::before, h6::before {
     display: block;
     content: " ";
     margin-top: -2.3em;
     height: 2.3em;
     visibility: hidden;
     pointer-events: none;
-}
+} */
 /* smoother display */
 blockquote, pre, .notices, ol, ul {
     display: flow-root;
@@ -212,12 +212,16 @@ header a:hover, header a:focus {
 
     font-size: 1.1em;
 }
-.transition {
-    transition: margin 1s ease;
+.contents, .sidebar-wrapper {
+    transition: transform .7s ease;
 }
 /* remove extra margin when sidebar is out of sight */
-.full .transition {
-    margin-left: 3em;
+.full .contents {
+    transform: translateX(-8.5em);
+}
+/* and slide sidebar out of sight to avoid complications */
+.full .sidebar-wrapper {
+    transform: translateX(-22em);
 }
 /* prevent weird behavior when initially loading the page */
 .start .transition {
@@ -256,12 +260,24 @@ header a:hover, header a:focus {
         font-size: 2.15em;
     }
 }
+@media (max-width: 1050px) {
+    .contents {
+        margin-right: 2em;
+    }
+    .full .contents {
+        translate: transformX(-9em);
+    }
+}
 @media (max-width: 975px) {
     #sidenav, .show-menu-wrapper {
-        width: 18em;
+        width: 17em;
     }
     .contents {
-        margin-left: 19em;
+        margin-left: 17em;
+        margin-right: 1em;
+    }
+    .sidebar-wrapper {
+        padding-right: 2em;
     }
     header {
         font-size: 2em;
@@ -283,29 +299,47 @@ header a:hover, header a:focus {
     .sidebar-hidden {
         overflow-y: scroll;
     }
+    .full .contents {
+        transform: translateX(-9em);
+    }
+    .full .sidebar-wrapper {
+        transform: translateX(-20em);
+    }
     .sidebar-hidden .contents {
-        margin-left: 3em;
+        margin-left: 2em;
+    }
+    .sidebar-hidden.full .contents, .sidebar-hidden.full .sidebar-wrapper {
+        transform: none;
+    }
+}
+@media (max-width: 875px) {
+    #sidenav, .show-menu-wrapper {
+        width: 16em;
+    }
+    #sidenav ul .nav-item {
+        font-size: 1.1em;
+    }
+    #sidenav ul ul .nav-item {
+        font-size: 1em;
+    }
+    .contents {
+        margin-left: 16em;
+        margin-right: 0;
+    }
+    .sidebar-hidden .contents {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .full .contents {
+        transform: translateX(-8em);
     }
 }
 @media (max-width: 830px) {
     .wrapper {
         margin-top: 2.5em;
     }
-    .contents {
-        margin-left: 17em;
-        margin-right: 2em;
-    }
-    .full .transition {
-        margin-left: 2em;
-    }
-    .sidebar-hidden .contents {
-        margin-left: 2em;
-    }
-    header {
-        font-size: 1.8em;
-    }
-    #sidenav {
-        width: 16em;
+    #sidenav, .show-menu-wrapper {
+        width: 15em;
     }
     #sidenav ul .nav-item {
         font-size: 1em;
@@ -313,8 +347,20 @@ header a:hover, header a:focus {
     #sidenav ul ul .nav-item {
         font-size: .9em;
     }
-    .sidebar-hidden .show-menu-wrapper {
-        width: 16em;
+    .sidebar-wrapper {
+        padding-right: 1em;
+    }
+    .contents {
+        margin-left: 14em;
+    }
+    .full .sidebar-wrapper {
+        transform: translateX(-17em);
+    }
+    .full .contents {
+        transform: translateX(-6.5em);
+    }
+    header {
+        font-size: 1.8em;
     }
 }
 @media (max-width: 700px) {
