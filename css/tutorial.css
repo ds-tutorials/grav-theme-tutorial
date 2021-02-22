@@ -392,6 +392,9 @@ header a:hover, header a:focus {
     .sidebar-hidden .show-menu-wrapper {
         width: 100%;
     }
+    .full .contents, .full .sidebar-wrapper {
+        transform: none;
+    }
 }
 @media (max-width: 430px) {
     .contents, .full .contents, .sidebar-hidden .contents {
